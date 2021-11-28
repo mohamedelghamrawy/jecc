@@ -6,7 +6,7 @@
  * @since 15.11.21
  */
 
-package com.github.mhelghamrawy.ie7cryptographyecc;
+package com.github.mhelghamrawy.ie7cryptographyecc.domain;
 
 import lombok.Getter;
 
@@ -45,5 +45,11 @@ public class EcPoint {
     @Override
     public int hashCode() {
         return Objects.hash(xCoordinate, yCoordinate);
+    }
+
+    @Override
+    public String toString() {
+        if(this.equals(EcPoint.POINT_AT_INFINITY)) { return  "Point at Infinity";}
+        else { return "(" + xCoordinate + ", " + yCoordinate + ")";}
     }
 }
