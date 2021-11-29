@@ -10,17 +10,25 @@ package com.github.mhelghamrawy.ie7cryptographyecc.util;
 
 import com.github.mhelghamrawy.ie7cryptographyecc.domain.EcPoint;
 import com.github.mhelghamrawy.ie7cryptographyecc.domain.EccParameterSpec;
+import lombok.Getter;
 
 import java.math.BigInteger;
 
+@Getter
 public class EcPointArithmetic {
-    private final EccParameterSpec EccSpec;
+    public final EccParameterSpec EccSpec;
 
     public EcPointArithmetic(EccParameterSpec EccParamSpec) {
         this.EccSpec = EccParamSpec;
     }
 
-    public EcPoint scalmult(BigInteger k, EcPoint P){
+    public EcPoint scalarMultiply(BigInteger k, EcPoint P){
+        /**
+         *  A method which calculates the scalar multiplication of a given elliptic curve point
+         *  using the double-and-add algorithm. The method makes use of the cyclic subgroup nature
+         *  of the kP to handle generating points at infinity.
+         * */
+
         /*
             Using T = P, we were getting arithmetic errors due to operations with null, so we decided to start at
             the point at infinity and modulo k. Thus, we make use of the cyclic nature of kP without involving
@@ -34,25 +42,24 @@ public class EcPointArithmetic {
             with each element byte containing only one bit
         */
         int bitLength = k.bitLength();
-        byte[] biarray = new byte[bitLength];
+        byte[] binaryForm = new byte[bitLength];
 
         for(int i=0;i<bitLength;i++){
-            biarray[i] = k.mod(BigInteger.TWO).byteValue();
+            binaryForm[i] = k.mod(BigInteger.TWO).byteValue();
             k = k.divide(BigInteger.TWO);
         }
 
         // Double-and-add algorithm
         for(int i = bitLength-1;i >= 0;i--){
-            T = doublePoint(T);
-            if(biarray[i] == 0b00000001)
-                T = addPoint(T, P);
+            T = pointDouble(T);
+            if(binaryForm[i] == 0b00000001) { T = pointAdd(T, P);}
         }
 
         return T;
     }
 
-    public EcPoint addPoint(EcPoint P, EcPoint Q) {
-        if (P.equals(Q)) { return doublePoint(P);}
+    public EcPoint pointAdd(EcPoint P, EcPoint Q) {
+        if (P.equals(Q)) { return pointDouble(P);}
         else if (P.equals(EcPoint.POINT_AT_INFINITY)) { return Q;}
         else if (Q.equals(EcPoint.POINT_AT_INFINITY)) { return P;}
 
@@ -71,7 +78,7 @@ public class EcPointArithmetic {
         return new EcPoint(Rx, Ry);
     }
 
-    public EcPoint doublePoint(EcPoint P) {
+    public EcPoint pointDouble(EcPoint P) {
         if (P.equals(EcPoint.POINT_AT_INFINITY)) { return P;}
 
         BigInteger slope = (P.getXCoordinate().pow(2)).multiply(new BigInteger("3")).add(EccSpec.a)

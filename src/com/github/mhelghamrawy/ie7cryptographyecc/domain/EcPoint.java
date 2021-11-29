@@ -50,6 +50,6 @@ public class EcPoint {
     @Override
     public String toString() {
         if(this.equals(EcPoint.POINT_AT_INFINITY)) { return  "Point at Infinity";}
-        else { return "(" + xCoordinate + ", " + yCoordinate + ")";}
+        else { return "(" + xCoordinate.toString(16).toUpperCase() + ", " + yCoordinate.toString(16).toUpperCase() + ")";}
     }
 }
