@@ -182,48 +182,6 @@ class ECCTest {
 				);
 		assertEquals(ecPointC20, ecPoint20);
 		
-		/*long k21 = 112233445566778899;
-		EcPoint ecPoint21 = curve.scalarMultiply(BigInteger.valueOf(k20), curve.getEccSpec().getG());
-		EcPoint ecPointC21 = new EcPoint(
-				new BigInteger("4CE119C96E2FA357200B559B2F7DD5A5F02D5290AFF74B03F3E471B273211C97", 16), 
-				new BigInteger("12BA26DCB10EC1625DA61FA10A844C676162948271D96967450288EE9233DC3A", 16)
-				);
-		assertEquals(ecPointC21, ecPoint21);
-		
-		long k22 = 20;
-		EcPoint ecPoint22 = curve.scalarMultiply(BigInteger.valueOf(k20), curve.getEccSpec().getG());
-		EcPoint ecPointC22 = new EcPoint(
-				new BigInteger("4CE119C96E2FA357200B559B2F7DD5A5F02D5290AFF74B03F3E471B273211C97", 16), 
-				new BigInteger("12BA26DCB10EC1625DA61FA10A844C676162948271D96967450288EE9233DC3A", 16)
-				);
-		assertEquals(ecPointC22, ecPoint22);
-		
-		long k23 = 20;
-		EcPoint ecPoint23 = curve.scalarMultiply(BigInteger.valueOf(k20), curve.getEccSpec().getG());
-		EcPoint ecPointC23 = new EcPoint(
-				new BigInteger("4CE119C96E2FA357200B559B2F7DD5A5F02D5290AFF74B03F3E471B273211C97", 16), 
-				new BigInteger("12BA26DCB10EC1625DA61FA10A844C676162948271D96967450288EE9233DC3A", 16)
-				);
-		assertEquals(ecPointC23, ecPoint23);
-		
-		long k24 = 20;
-		EcPoint ecPoint24 = curve.scalarMultiply(BigInteger.valueOf(k20), curve.getEccSpec().getG());
-		EcPoint ecPointC24 = new EcPoint(
-				new BigInteger("4CE119C96E2FA357200B559B2F7DD5A5F02D5290AFF74B03F3E471B273211C97", 16), 
-				new BigInteger("12BA26DCB10EC1625DA61FA10A844C676162948271D96967450288EE9233DC3A", 16)
-				);
-		assertEquals(ecPointC24, ecPoint24);
-		
-		long k25 = 20;
-		EcPoint ecPoint25 = curve.scalarMultiply(BigInteger.valueOf(k20), curve.getEccSpec().getG());
-		EcPoint ecPointC25 = new EcPoint(
-				new BigInteger("4CE119C96E2FA357200B559B2F7DD5A5F02D5290AFF74B03F3E471B273211C97", 16), 
-				new BigInteger("12BA26DCB10EC1625DA61FA10A844C676162948271D96967450288EE9233DC3A", 16)
-				);
-		assertEquals(ecPointC25, ecPoint25);
-		
-	*/
-		
 	}
 	
 }
