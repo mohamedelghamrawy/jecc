@@ -1,1 +1,1 @@
-# ie7-cryptography-ecc
+# JECC: Java Elliptic Curve Cryptography
