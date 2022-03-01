@@ -1,12 +1,12 @@
 /**
  * EcPoint class implements
  *
- * @author mhelghamrawy
+ * @author mohamedelghamrawy
  * @version 1.0
  * @since 15.11.21
  */
 
-package com.github.mhelghamrawy.ie7cryptographyecc.domain;
+package com.mohamedelghamrawy.jecc.domain;
 
 import lombok.Getter;
 

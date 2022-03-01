@@ -1,15 +1,15 @@
 /**
  * EcScalarMultiplication class implements
  *
- * @author mhelghamrawy
+ * @author mohamedelghamrawy
  * @version 1.0
  * @since 16.11.21
  */
 
-package com.github.mhelghamrawy.ie7cryptographyecc;
+package com.mohamedelghamrawy.jecc;
 
-import com.github.mhelghamrawy.ie7cryptographyecc.domain.EccParameterSpec;
-import com.github.mhelghamrawy.ie7cryptographyecc.util.EcPointArithmetic;
+import com.mohamedelghamrawy.jecc.domain.EccParameterSpec;
+import com.mohamedelghamrawy.jecc.util.EcPointArithmetic;
 
 import java.math.BigInteger;
 import java.util.Random;

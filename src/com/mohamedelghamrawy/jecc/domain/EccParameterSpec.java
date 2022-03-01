@@ -1,19 +1,19 @@
 /**
  * EccParameterSpec class implements
  *
- * @author mhelghamrawy
+ * @author mohamedelghamrawy
  * @version 1.0
  * @since 27.11.21
  */
 
-package com.github.mhelghamrawy.ie7cryptographyecc.domain;
-
-import java.math.BigInteger;
+package com.mohamedelghamrawy.jecc.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+
+import java.math.BigInteger;
 
 @AllArgsConstructor
 @RequiredArgsConstructor
