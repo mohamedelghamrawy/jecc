@@ -40,7 +40,7 @@ class EcPointArithmeticPerformanceTest {
     }
 
     @Test
-    void scalarMultiply() {
+    void scalarMultiply() throws IOException {
         for (long i = 0; i < 10000; i++) {
             BigInteger ktemp = k.add(BigInteger.valueOf(randomGen.nextInt(Integer.MAX_VALUE)));
 
@@ -63,6 +63,8 @@ class EcPointArithmeticPerformanceTest {
             line.append(result.getXCoordinate().toString(16).toUpperCase());
             line.append(',');
             line.append(timer.elapsed(TimeUnit.NANOSECONDS));
+            line.append("\n");
+            fileWriter.write(line.toString());
         }
     }
 
