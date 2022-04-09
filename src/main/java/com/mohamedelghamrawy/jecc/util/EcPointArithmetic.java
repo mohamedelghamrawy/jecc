@@ -35,6 +35,7 @@ public class EcPointArithmetic {
             the point at infinity in any algebraic operations.
         */
         EcPoint T = EcPoint.POINT_AT_INFINITY;
+        EcPoint dummyT = EcPoint.POINT_AT_INFINITY; // Dummy T for Montgomery ladder
         k = k.mod(EccSpec.n);
 
         /*
@@ -52,7 +53,11 @@ public class EcPointArithmetic {
         // Double-and-add algorithm
         for(int i = bitLength-1;i >= 0;i--){
             T = pointDouble(T);
-            if(binaryForm[i] == 0b00000001) { T = pointAdd(T, P);}
+            dummyT = pointAdd(dummyT, P);
+            if(binaryForm[i] == 0b00000001) {
+                T = pointAdd(T, P);
+                dummyT = pointDouble(dummyT);
+            }
         }
 
         return T;
