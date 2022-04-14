@@ -17,7 +17,7 @@ Currently, only the secp256k1 curve is implemented.
 To compute a scalar point multiplication, invoke the scalarMultiply method found within the EcPointArithmetic class.
 
 ## Testing
-The project is extensively tested using 
+The project is extensively tested using automatically generated test vectors from the BouncyCastle library. 
 
 ## Requests/Recommendations
 If you have feature requests or project recommendations, please feel free to reach out and ask.
@@ -25,4 +25,4 @@ Also feel free to reach out if you would like to contribute.
 
 ## Future Improvements
 - Implement ECDSA
-- Increase supported curves
+- Increase number of  supported curves
