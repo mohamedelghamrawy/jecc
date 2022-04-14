@@ -25,4 +25,4 @@ Also feel free to reach out if you would like to contribute.
 
 ## Future Improvements
 - Implement ECDSA
-- Increase number of  supported curves
+- Increase number of supported curves
